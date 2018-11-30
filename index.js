@@ -14,6 +14,8 @@ var header = function(req, res ,next){
     next();
 };
 
+app.use('/api', header, require('./api/users.js'));
+
 // ----------------------------------------------------------------------------------
 
 app.use('/api/user', header, require('./api/Grade/user.js'));
