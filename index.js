@@ -18,7 +18,7 @@ app.use('/api', header, require('./api/users.js'));
 
 // ----------------------------------------------------------------------------------
 
-app.use('/api/user', header, require('./api/Grade/user.js'));
+app.use('/api/users', header, require('./api/users.js'));
 app.use('/api/cattle', header, require('./api/Grade/cattle.js'));
 app.use('/api/graded', header, require('./api/Grade/graded.js'));
 app.use('/api/summed', header, require('./api/Grade/summed.js'));
