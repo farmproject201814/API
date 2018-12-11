@@ -36,4 +36,15 @@ router.get('/showMembers',(req, res)=>{
     });
 });
 
+router.post('/editStatus/:key',(req, res)=>{
+    var key = req.params.key;
+    var data = req.body;
+    firebase.db().ref('users/'+key).update(data);
+})
+
+router.delete('/removeMember/:key',(req, res)=>{
+    var key = req.params.key;
+    firebase.db().ref('users/'+key).remove();
+})
+
 module.exports = router;

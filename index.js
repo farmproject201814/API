@@ -23,6 +23,14 @@ app.use('/api/cattle', header, require('./api/Grade/cattle.js'));
 app.use('/api/graded', header, require('./api/Grade/graded.js'));
 app.use('/api/summed', header, require('./api/Grade/summed.js'));
 
+// -ระบบคลังชิ้นเนื้อ---------------------------------------------------------------------------------
+app.use('/api/store', header, require('./api/Store/menu1.js'));
+app.use('/api/store', header, require('./api/Store/menu2.js'));
+app.use('/api/store', header, require('./api/Store/menu3.js'));
+app.use('/api/store', header, require('./api/Store/menu4.js'));
+app.use('/api/store', header, require('./api/Store/menu5.js'));
+app.use('/api/store', header, require('./api/Store/menu6.js'));
+app.use('/api/store', header, require('./api/Store/simulation.js'));
 // ----------------------------------------------------------------------------------
 
 app.use('*',(req, res)=>{
