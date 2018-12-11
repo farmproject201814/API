@@ -4,7 +4,7 @@ var firebase = require('../../firebase.js');
 
 router.post('/add',(req, res)=>{
     var data = req.body;
-    firebase.db().ref('summed').push(data).then(data=>{
+    firebase.db().ref('BeefGrading/summed').push(data).then(data=>{
         res.json('Sucess');
     }, err=>{
         res.json('Failed');
@@ -13,16 +13,16 @@ router.post('/add',(req, res)=>{
 
 router.delete('/remove/:key',(req, res)=>{
     var key = req.params.key;
-    firebase.db().ref('summed/'+key).remove();
+    firebase.db().ref('BeefGrading/summed/'+key).remove();
 })
 
 router.post('/addform',(req, res)=>{
     var data = req.body;
-    firebase.db().ref('summed').push(data);
+    firebase.db().ref('BeefGrading/summed').push(data);
 })
 
 router.get('/show',(req, res)=>{
-    firebase.db().ref('summed').once('value',data=>{
+    firebase.db().ref('BeefGrading/summed').once('value',data=>{
         res.json(data.val());
     });
 });
@@ -30,7 +30,7 @@ router.get('/show',(req, res)=>{
 router.post('/edit/:key',(req, res)=>{
     var key = req.params.key;
     var data = req.body;
-    firebase.db().ref('summed/'+key).update(data);
+    firebase.db().ref('BeefGrading/summed/'+key).update(data);
 })
 
 
