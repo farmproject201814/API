@@ -4,10 +4,8 @@ var firebase = require('../../firebase.js');
 
 router.post('/add',(req, res)=>{
     var data = req.body;
-    firebase.db().ref('BeefGrading/graded').push(data).then(data=>{
-        res.json('Sucess');
-    }, err=>{
-        res.json('Failed');
+    firebase.db().ref('BeefGrading/graded').push(data).then(()=>{
+        res.json({status: 'OK'})
     })
 })
 
@@ -39,4 +37,5 @@ router.get('/show/:key',(req, res)=>{
         res.json(data.val());
     });
 });
+
 module.exports = router;
