@@ -18,7 +18,13 @@ router.delete('/remove/:key',(req, res)=>{
 
 router.post('/addform',(req, res)=>{
     var data = req.body;
-    firebase.db().ref('BeefGrading/cattle').push(data);
+    firebase.db().ref('BeefGrading/cattle').push(data),ficbugs=>{
+        if(ficbugs) {
+            res.json({status: 'ERROR'});
+        } else {
+            res.json({status: 'OK'});
+        }
+    };
 })
 
 router.get('/show',(req, res)=>{
@@ -30,7 +36,13 @@ router.get('/show',(req, res)=>{
 router.post('/edit/:key',(req, res)=>{
     var key = req.params.key;
     var data = req.body;
-    firebase.db().ref('BeefGrading/cattle/'+key).update(data);
+    firebase.db().ref('BeefGrading/cattle/'+key).update(data,ficbug=>{
+        if(ficbug) {
+            res.json({status: 'ERROR'});
+        } else {
+            res.json({status: 'OK'});
+        }
+    });
 })
 
 router.get('/show/:key',(req, res)=>{
