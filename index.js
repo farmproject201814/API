@@ -30,6 +30,7 @@ app.use('/api/store', header, require('./api/Store/menu3.js'));
 app.use('/api/store', header, require('./api/Store/menu4.js'));
 app.use('/api/store', header, require('./api/Store/menu5.js'));
 app.use('/api/store', header, require('./api/Store/menu6.js'));
+app.use('/api/store', header, require('./api/Store/menu7.js'));
 app.use('/api/store', header, require('./api/Store/simulation.js'));
 // ----------------------------------------------------------------------------------
 
